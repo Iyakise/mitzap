@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Mitsab Admin — Page editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <header class="editor-topbar"><a class="back-link" href="index.html"><span>←</span> Back to admin</a><div class="editor-brand"><span class="brand-mark"></span><strong>MITSAB <small>PAGE EDITOR</small></strong></div><div class="top-actions"><span class="save-state" id="saveState">All changes saved</span><button class="btn btn-ghost" id="previewPage">Preview page ↗</button><button class="btn btn-primary" id="savePage">Save &amp; publish</button></div></header>
+  <main class="editor-shell">
+    <aside class="page-rail"><p class="eyebrow">WEBSITE CONTENT</p><h1>Edit a page</h1><p class="rail-copy">Choose a page below. Every section, image, button, and link on that page can be updated here.</p><label class="select-label">SELECT PAGE<select id="pageSelect"><option value="home">Home</option><option value="about-us">About Us</option><option value="services">Services</option><option value="projects">Projects</option><option value="newsroom">Newsroom</option><option value="our-subsidiaries">Our Subsidiaries</option></select></label><div class="page-status"><span class="status published"><i></i> Published</span><small id="lastSaved">Last saved today at 09:42</small></div><nav class="section-nav" id="sectionNav"></nav></aside>
+    <section class="editor-content"><div class="editor-heading"><div><p class="eyebrow" id="pageEyebrow">PAGE / HOME</p><h2 id="pageTitle">Home</h2><p id="pageDescription">Edit all homepage sections from one place. Click a section to expand it.</p></div><button class="help-btn" title="Editor help">?</button></div><div class="notice"><span>i</span><div><b>Changes are saved as a draft until you publish.</b><small>Images selected here will be used by the public page after your connected CMS/API syncs them.</small></div></div><form id="pageForm"><div id="sections"></div></form></section>
+  </main>
+
+  <div class="media-drawer-backdrop" id="mediaBackdrop"><aside class="media-drawer"><div class="drawer-head"><div><p class="eyebrow">MEDIA LIBRARY</p><h2>Choose an image</h2><small>Select an existing asset or upload a new one.</small></div><button class="drawer-close" id="closeMedia">×</button></div><div class="drawer-toolbar"><div class="search"><span>⌕</span><input id="mediaSearch" placeholder="Search media..." type="search"></div><button class="btn btn-primary" id="drawerUpload">Upload image</button><input id="drawerFile" type="file" accept="image/*" hidden></div><div class="drawer-grid" id="drawerGrid"></div></aside></div>
+  <div class="toast" id="toast"><span>✓</span><b id="toastMessage">Page saved</b></div>
+  <script src="editor.js"></script>
+</body>
+</html>
